@@ -6,8 +6,11 @@ This tutorial is intended to help developers and software development students b
 
 In this tutorial, I will be explaining the regex for matching a Hex Value. This can be helpful when trying to make sure hex values for colors are being used correctly in a development project.
 
-Regex for matching a hex value: /^#?([a-f0-9]{6}|[a-f0-9]{3})$/
+Regex for matching a hex value: 
 
+```
+/^#?([a-f0-9]{6}|[a-f0-9]{3})$/
+```
 ## Table of Contents
 
 - [Anchors](#anchors)
