@@ -27,7 +27,7 @@ Regex for matching a hex value:
 
 ## Regex Components
 
-Regex expressions are wapped in two forward slashes /regex/. Everything inside those two forward slashes is part of the regex and define a search pattern for matching. In the next few sections, I will define the meanings of the symbols inside of the two forward slashes of the regex for matching a hex value
+Regex expressions are wapped in two forward slashes, for example: `/regex/`. Everything inside those two forward slashes is part of the regex and define a search pattern for matching. In the next few sections, I will define the meanings of the symbols inside of the two forward slashes of the regex for matching a hex value
 
 ```
 /^#?([a-f0-9]{6}|[a-f0-9]{3})$/
@@ -68,18 +68,36 @@ Character classes in regex define a set of characters that can occur in a string
 
 ### Flags
 
+Earlier I mentioned that everything in regex is wrapped in slashes `/`. Flags go after the second slash at the end of the regex, and they define additional functionality or limits of the regex. Our example of regex for matching a hex code doesn't have any flags, but I'll define the flags anyways. 
+
+The six flags in regex are defined by (sources: https://javascript.info/regexp-introduction and https://coding-boot-camp.github.io/full-stack/computer-science/regex-tutorial):
+
+`s` - Enables “dotall” mode, that allows a dot . to match newline character \n 
+
+`u` - Enables full Unicode support
+
+`y` -“Sticky” mode: searching at the exact position in the text 
+
+`g` — Global search: the regex should be tested against all possible matches in a string
+
+`i` — Case-insensitive search: case should be ignored while attempting a match in a string
+
+`m` — Multi-line search: a multi-line input string should be treated as multiple lines
+
 ### Grouping and Capturing
+
+Grouping constructs are used to break strings into different sections to check whether they meet different requirements. Sections can be grouped using parentheses `()` in regex. Each section wrapped in parentheses is called a subexpression. Grouping constructs can be capturing or non-capturing. Capturing groups capture the matched sequences for reuse and non-capturing groups don't. Inserting `?:` after the first parentheses of a group makes the group non-capturing.
+
+In our example of the regex for matching a hex value, it contains a capturing group `([a-f0-9]{6}|[a-f0-9]{3})`, which contains a bracket expression for matching. More on bracket expresssions to come in the next section.
 
 ### Bracket Expressions
 
+We use bracket expressions `[]` to group the range of characters that we want to match. Bracket expressions outline the characters that we want to include in our requirements. Inn our example of regex for matching a hex value, `[a-f0-9]` looks for a string that contains a combination of lowercase letters a-f and numbers 0-9.
+
 ### Greedy and Lazy Match
 
-### Boundaries
-
-### Back-references
-
-### Look-ahead and Look-behind
+Greedy matches match as many occurrences of the pattern as possible. Lazy matches match as few occurrences of the pattern as possible. Lazy matches will usually look for the first match that fulfills the requirement and stop there, while greedy matches will keep looking for all matches that fulfill a requirement. Matches can be made lazy by adding a ? symbol after a quantifier. 
 
 ## Author
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+My name is Whitney Brady. I'm a student at the University of Utah Full Stack Development Bootcamp. Here's a link to my github: https://github.com/whitbreezy
